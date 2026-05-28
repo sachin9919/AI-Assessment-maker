@@ -9,7 +9,7 @@ const getAssessmentQueue = (): Queue => {
   // Lazily initialize queue so the server can boot in local auth-only mode
   // even when Redis is not configured yet.
   assessmentQueue = new Queue('assessment-queue', {
-    connection: getRedisClient(),
+    connection: getRedisClient() as any,
     defaultJobOptions: {
       attempts: 3,
       backoff: {

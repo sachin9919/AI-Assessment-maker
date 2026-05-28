@@ -137,7 +137,7 @@ Return ONLY valid JSON.
       console.log(`[Worker] Successfully completed assignment: ${assignmentId}`);
     },
     {
-      connection: getRedisClient(),
+      connection: getRedisClient() as any,
       concurrency: 1, // process 1 at a time
     }
   );
